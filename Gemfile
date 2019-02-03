@@ -5,6 +5,13 @@ ruby '2.4.2'
 
 gem 'mongoid', '>= 3.0.2'
 
+gem 'pry'
+
+gem 'rb-readline'
+
+gem "mongoid-paperclip", "~> 0.0.8", :require => "mongoid_paperclip"
+gem 'aws-sdk', '~> 3'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use Puma as the app server
