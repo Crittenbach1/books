@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.2'
 
+gem 'bootstrap-sass'
+
 gem 'mongoid', '>= 3.0.2'
 
 gem 'pry'
