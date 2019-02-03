@@ -24,7 +24,10 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(book_params)
+    binding.pry
+    @book = Book.new(params[:image].to_unsafe_hash)
+    @book.title = book_params[:title]
+    @book.author = book_params[:author]
 
     respond_to do |format|
       if @book.save
