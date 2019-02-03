@@ -5,6 +5,16 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+
+    @ownedBooks = []
+    @wantedBooks = []
+    @books.each do |book|
+      if book.owned
+        @ownedBooks << book
+      else
+        @wantedBooks << book
+      end
+    end
   end
 
   # GET /books/1
@@ -24,7 +34,6 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    binding.pry
     @book = Book.new(params[:image].to_unsafe_hash)
     @book.title = book_params[:title]
     @book.author = book_params[:author]
