@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
@@ -16,6 +17,7 @@ class BooksController < ApplicationController
       end
     end
   end
+
 
   # GET /books/1
   # GET /books/1.json

@@ -1,57 +1,44 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Books I Want to Buy</h1>
+<div class="wanted">
+<h1>Wishlist</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th colspan="1"></th>
-      <th>Title</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @wantedBooks.each do |book| %>
-      <tr>
-        <td><%= image_tag book.image.url %></td>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="inline-block">
+        <td class="inline-block"><%= image_tag book.image.url %></td>
+        <td class="break"><%= book.title %></td>
+        <td class="break"><%= book.author %></td>
+        <td class="break" id="button"><%= link_to 'Show', book %></td>
+        <td class="break" id="button"><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td class="break" id="button"><%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
-<h1>Books I Already Own</h1>
+<div class="owned">
+<h1>Books I Own</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th colspan="1"></th>
-      <th>Title</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
 <tbody>
   <% @ownedBooks.each do |book| %>
-    <tr>
+    <tr class="inline-block">
       <td><%= image_tag book.image.url %></td>
-      <td><%= book.title %></td>
-      <td><%= book.author %></td>
-      <td><%= link_to 'Show', book %></td>
-      <td><%= link_to 'Edit', edit_book_path(book) %></td>
-      <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td class="break"><%= book.title %></td>
+      <td class="break"><%= book.author %></td>
+      <td class="break" id="button"><%= link_to 'Show', book %></td>
+      <td class="break" id="button"><%= link_to 'Edit', edit_book_path(book) %></td>
+      <td class="break" id="button"><%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>
+<div id="button">
+  <%= link_to 'New Book', new_book_path %>
+</div>

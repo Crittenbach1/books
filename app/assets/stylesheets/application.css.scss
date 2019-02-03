@@ -1,1 +1,41 @@
 @import "bootstrap";
+
+td.break {
+  display:block;
+}
+tr.inline-block {
+  display: inline-block;
+  padding: 10px;
+}
+
+div.wanted {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+div.owned {
+  background-color: #828282;
+  color: white;
+  padding: 10px;
+}
+
+#button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+body {
+  background-color: black;
+}
+
+div.editOrNew {
+  background-color: white;
+  padding-left: 20px;
+}
