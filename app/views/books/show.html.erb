@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<div class="image">
+<%= image_tag @book.image.url %>
+</div>
 <p>
   <strong>Title:</strong>
   <%= @book.title %>
 </p>
-
-<%= image_tag @book.image.url %>
 
 <p>
   <strong>Author:</strong>
